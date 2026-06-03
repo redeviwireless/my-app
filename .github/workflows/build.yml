@@ -1,20 +1,30 @@
-{
-  "name": "my-app",
-  "version": "1.0.0",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron .",
-    "build": "electron-builder --win --x64"
-  },
-  "devDependencies": {
-    "electron": "^28.0.0",
-    "electron-builder": "^24.0.0"
-  },
-  "build": {
-    "appId": "com.myapp",
-    "win": {
-      "target": "nsis",
-      "icon": "icon.ico"
-    }
-  }
-}
+name: Build EXE
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build EXE
+        run: npm run build
+
+      - name: Upload EXE
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-app-exe
+          path: dist/*.exe
