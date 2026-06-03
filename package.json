@@ -12,9 +12,16 @@
   },
   "build": {
     "appId": "com.myapp",
+    "directories": {
+      "output": "dist"
+    },
     "win": {
-      "target": "nsis",
-      "icon": "icon.ico"
-    }
+      "target": "nsis"
+    },
+    "files": [
+      "index.html",
+      "main.js",
+      "package.json"
+    ]
   }
 }
