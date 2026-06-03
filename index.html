@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My App</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #1a1a2e;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      color: #7b6ef6;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #aaa;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      background: #7b6ef6;
+      color: white;
+      border: none;
+      padding: 14px 36px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #5a4fcf;
+    }
+
+    .box {
+      margin-top: 40px;
+      background: #16213e;
+      border-radius: 16px;
+      padding: 24px 40px;
+      font-size: 15px;
+      color: #ccc;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🚀 My Electron App</h1>
+    <p>HTML, CSS aur JS se bani Desktop App</p>
+    <button class="btn" onclick="sayHello()">Click Karo!</button>
+
+    <div class="box" id="output">
+      Yahan result aayega...
+    </div>
+  </div>
+
+  <script>
+    function sayHello() {
+      const output = document.getElementById('output');
+      output.innerHTML = '✅ App chal rahi hai! <br> Yeh ek Desktop EXE hai.';
+      output.style.color = '#7b6ef6';
+    }
+  </script>
+
+</body>
+</html>
