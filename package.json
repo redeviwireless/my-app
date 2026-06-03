@@ -12,6 +12,7 @@
   },
   "build": {
     "appId": "com.myapp",
+    "publish": null,
     "directories": {
       "output": "dist"
     },
